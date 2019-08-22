@@ -3,6 +3,8 @@ class Order < ApplicationRecord
   has_many  :products, through: :order_products
   belongs_to :customer
 
+  validates :status, presence: true, inclusion: {in: ["pending", "shipped"] }
+
 
   # def products
   #   product_ids = OrderProduct.where(order_id: id).pluck(:product_id)
