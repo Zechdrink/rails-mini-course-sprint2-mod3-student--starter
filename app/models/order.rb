@@ -4,7 +4,9 @@ class Order < ApplicationRecord
   belongs_to :customer
 
   validates :status, presence: true, inclusion: {in: ["pending", "shipped"] }
-
+  
+  scope :in_stock, -> (order_id) { find(order_id).products.where("inventory > ?", 0).order(:cost_cents)}
+  scope :out_of_stock, -> (order_id) { find(order_id).products.where("inventory < ?", 1).order(:cost_cents)}
 
   # def products
   #   product_ids = OrderProduct.where(order_id: id).pluck(:product_id)

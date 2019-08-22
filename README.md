@@ -61,8 +61,8 @@ Here is a breakdown of the existing resource API for the application.
 | GET    | customer | /api/v1/customers/:id                 | api/v1/customers#show    | get a customer                 |
 | PATCH  | customer | /api/v1/customers/:id                 | api/v1/customers#update  | update a customer              |
 | PUT    | customer | /api/v1/customers/:id                 | api/v1/customers#update  | update a customer              |
-| DELETE | customer | /api/v1/customers/:id                 | api/v1/customers#destroy | delete a customer              |
 | GET    | order    | /api/v1/orders                        | api/v1/orders#index      | list all orders                |
+| DELETE | customer | /api/v1/customers/:id                 | api/v1/customers#destroy | delete a customer              |
 | GET    | order    | /api/v1/customers/:customer_id/orders | api/v1/orders#index      | list all orders for a customer |
 | POST   | order    | /api/v1/customers/:customer_id/orders | api/v1/orders#create     | create an order for a customer |
 | GET    | order    | /api/v1/orders/:id                    | api/v1/orders#show       | get a specific order           |

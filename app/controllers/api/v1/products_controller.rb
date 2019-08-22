@@ -9,7 +9,8 @@ module Api
           @products = Order.find(params[:order_id]).products
           puts " I am here#{@products}"
         else
-          @products = Product.where("inventory > ?", 0).order(:cost)
+          # @products = Product.where("inventory > ?", 0).order(:cost)
+          @products = Order.in_stock(params[[:order_id]])
         end
 
         render json: @products
