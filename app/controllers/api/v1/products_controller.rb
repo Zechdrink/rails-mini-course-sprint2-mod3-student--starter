@@ -10,7 +10,7 @@ module Api
           puts " I am here#{@products}"
         else
           # @products = Product.where("inventory > ?", 0).order(:cost)
-          @products = Order.in_stock(params[[:order_id]])
+          @products = Order.in_stock()
         end
 
         render json: @products
